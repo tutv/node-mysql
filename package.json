@@ -1,7 +1,7 @@
 {
   "name": "node-mysql",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repo to compare the speed of MySQL vs NeDB",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
@@ -24,6 +24,7 @@
   "dependencies": {
     "bookshelf": "^0.9.4",
     "express": "^4.13.4",
-    "knex": "^0.10.0"
+    "knex": "^0.10.0",
+    "mysql": "^2.10.2"
   }
 }

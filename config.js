@@ -9,16 +9,4 @@ var knex = require('knex')({
     }
 });
 
-var bookshelf = require('bookshelf')(knex);
-
-var Author = bookshelf.Model.extend({
-    tableName: 'authors'
-});
-
-var Posts = bookshelf.Model.extend({
-    tableName: 'posts'
-});
-
-var Category = bookshelf.Model.extend({
-    tableName: 'users'
-});
+module.exports = require('bookshelf')(knex);
