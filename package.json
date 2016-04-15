@@ -22,10 +22,11 @@
   },
   "homepage": "https://github.com/tutv95/node-mysql#readme",
   "dependencies": {
-    "bookshelf": "^0.9.4",
-    "express": "^4.13.4",
-    "knex": "^0.10.0",
-    "lorem-ipsum": "^1.0.3",
-    "mysql": "^2.10.2"
+    "bookshelf": "latest",
+    "datek": "latest",
+    "express": "latest",
+    "knex": "latest",
+    "lorem-ipsum": "latest",
+    "mysql": "latest"
   }
 }
