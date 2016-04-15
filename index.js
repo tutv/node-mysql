@@ -118,9 +118,44 @@ app.get('/post/:id', function (req, res) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
-
         response.time = sumTime;
-        response.result = post;
+
+        if (!post) {
+            response.result = null;
+            response.return = false;
+            response.msg = 'Post not found';
+        } else {
+            response.return = true;
+            response.result = post;
+        }
+
+        res.json(response);
+    });
+});
+
+/**
+ * Get post by author id
+ */
+app.get('/author/:id', function (req, res) {
+    console.log(req.route.path);
+
+    var id = parseInt(req.params.id);
+    var startTime = datek.getNowTimestamp();
+
+    knex.select('posts.*', 'authors.name', 'authors.username').from('posts').innerJoin('authors', 'posts.author_id', '=', 'authors.id').where('posts.author_id', id).limit(10).then(function (posts) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+
+        if (!posts) {
+            response.result = null;
+            response.return = false;
+            response.msg = 'Something went wrong :]';
+        } else {
+            response.return = true;
+            response.result = posts;
+        }
 
         res.json(response);
     });
