@@ -72,7 +72,7 @@ app.get('/seedPosts/:author', function (req, res) {
 app.get('/posts', function (req, res) {
     var startTime = datek.getNowTimestamp();
 
-    knex.select('*').from('posts').leftJoin('authors', 'posts.author_id', '=', 'authors.id').limit(10).then(function (posts) {
+    knex.select('*').from('posts').innerJoin('authors', 'posts.author_id', '=', 'authors.id').limit(10).then(function (posts) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
@@ -93,7 +93,7 @@ app.get('/posts/:page', function (req, res) {
     var page = parseInt(req.params.page);
     var offset = (page - 1) * 10;
 
-    knex.select('*').from('posts').leftJoin('authors', 'posts.author_id', '=', 'authors.id').offset(offset).limit(10).then(function (posts) {
+    knex.select('*').from('posts').innerJoin('authors', 'posts.author_id', '=', 'authors.id').offset(offset).limit(10).then(function (posts) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
