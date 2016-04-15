@@ -54,7 +54,7 @@ app.get('/seedPosts/:author', function (req, res) {
     var author_id = parseInt(req.params.author);
     var count = 0;
 
-    for (var i = 0; i < 2000; i++) {
+    for (var i = 0; i < 200000; i++) {
         db.posts.insert({
             title: genK.generateTitle(),
             content: genK.generateContent(),
