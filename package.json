@@ -25,6 +25,7 @@
     "bookshelf": "^0.9.4",
     "express": "^4.13.4",
     "knex": "^0.10.0",
+    "lorem-ipsum": "^1.0.3",
     "mysql": "^2.10.2"
   }
 }

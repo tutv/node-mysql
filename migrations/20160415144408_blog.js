@@ -7,10 +7,10 @@ exports.up = function (knex, Promise) {
             table.longText('content');
             table.integer('author_id');
 
-            table.timestamps();
+            table.timestamp('created_at').defaultTo(knex.fn.now());
+            table.timestamp('updated_at').defaultTo(knex.fn.now());
 
             table.index('author_id');
-            table.index('title');
         }),
 
         knex.schema.createTable('authors', function (table) {
@@ -19,14 +19,16 @@ exports.up = function (knex, Promise) {
             table.string('username');
             table.string('name');
 
-            table.timestamps();
+            table.timestamp('created_at').defaultTo(knex.fn.now());
+            table.timestamp('updated_at').defaultTo(knex.fn.now());
         }),
         knex.schema.createTable('categories', function (table) {
             table.increments('id').primary();
 
             table.string('name');
 
-            table.timestamps();
+            table.timestamp('created_at').defaultTo(knex.fn.now());
+            table.timestamp('updated_at').defaultTo(knex.fn.now());
         }),
         knex.schema.createTable('post_categories', function (table) {
             table.increments('id').primary();
@@ -37,7 +39,8 @@ exports.up = function (knex, Promise) {
             table.index('post_id');
             table.index('category_id');
 
-            table.timestamps();
+            table.timestamp('created_at').defaultTo(knex.fn.now());
+            table.timestamp('updated_at').defaultTo(knex.fn.now());
         })
     ]);
 };
