@@ -6,9 +6,10 @@ module.exports = {
         client: 'mysql',
         connection: {
             host: '127.0.0.1',
-            user: 'root',
-            password: '',
-            database: 'node'
+            user: 'uet',
+            password: 'uetf2016',
+            database: 'node',
+            charset: 'utf8'
         }
     },
 
@@ -16,9 +17,10 @@ module.exports = {
         client: 'mysql',
         connection: {
             host: '127.0.0.1',
-            user: 'root',
-            password: '',
-            database: 'node'
+            user: 'uet',
+            password: 'uetf2016',
+            database: 'node',
+            charset: 'utf8'
         },
         migrations: {
             tableName: 'knex_migrations'
@@ -29,9 +31,10 @@ module.exports = {
         client: 'mysql',
         connection: {
             host: '127.0.0.1',
-            user: 'root',
-            password: '',
-            database: 'node'
+            user: 'uet',
+            password: 'uetf2016',
+            database: 'node',
+            charset: 'utf8'
         },
         migrations: {
             tableName: 'knex_migrations'
