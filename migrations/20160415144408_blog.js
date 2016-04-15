@@ -7,10 +7,9 @@ exports.up = function (knex, Promise) {
             table.longText('content');
             table.integer('author_id');
 
-            table.timestamp('created_at').defaultTo(knex.fn.now());
-            table.timestamp('updated_at').defaultTo(knex.fn.now());
-
             table.timestamps();
+
+            table.index('author_id');
         }),
 
         knex.schema.createTable('authors', function (table) {
