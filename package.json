@@ -1,0 +1,29 @@
+{
+  "name": "node-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutv95/node-mysql.git"
+  },
+  "keywords": [
+    "mysql",
+    "nodejs"
+  ],
+  "author": "tutv95",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tutv95/node-mysql/issues"
+  },
+  "homepage": "https://github.com/tutv95/node-mysql#readme",
+  "dependencies": {
+    "bookshelf": "^0.9.4",
+    "express": "^4.13.4",
+    "knex": "^0.10.0"
+  }
+}
