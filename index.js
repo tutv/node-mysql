@@ -49,12 +49,13 @@ app.get('/test', function (req, res) {
 /**
  * Seed posts
  */
-app.get('/seedPosts/:author', function (req, res) {
+app.get('/seedPosts/:author/:count', function (req, res) {
 
     var author_id = parseInt(req.params.author);
+    var countSeed = parseInt(req.params.count);
     var count = 0;
 
-    for (var i = 0; i < 200000; i++) {
+    for (var i = 0; i < countSeed; i++) {
         db.posts.insert({
             title: genK.generateTitle(),
             content: genK.generateContent(),
