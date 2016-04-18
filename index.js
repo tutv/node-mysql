@@ -197,6 +197,24 @@ app.get('/update/:id/:id_', function (req, res) {
     });
 });
 
+app.get('/delete/:id', function (req, res) {
+    console.log(req.route.path);
+
+    var id = req.params.id;
+    var startTime = datek.getNowTimestamp();
+
+    db.posts.where('id', '=', id).del().then(function (number) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+        response.result = number;
+
+        res.json(response);
+    });
+});
+
+
 /**
  * Server Listen
  */
