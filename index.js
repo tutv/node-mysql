@@ -162,6 +162,21 @@ app.get('/author/:id', function (req, res) {
     });
 });
 
+app.get('/countPosts', function (req, res) {
+    console.log(req.route.path);
+
+    var startTime = datek.getNowTimestamp();
+
+    db.posts.count('id').then(function (number) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+        response.result = number;
+
+        res.json(response);
+    });
+});
 
 /**
  * Server Listen
