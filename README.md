@@ -2,6 +2,7 @@
 This repo to compare the speed of MySQL vs NeDB
 
 1. Cách cài đặt
+
  a. Clone project:
  `git clone https://github.com/tutv95/node-mysql`
 
