@@ -214,6 +214,22 @@ app.get('/delete/:id', function (req, res) {
     });
 });
 
+/**
+ * API
+ */
+app.get('/api/1', function (req, res) {
+    var startTime = datek.getNowTimestamp();
+
+    db.posts.count('id').then(function (number) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+        response.result = number;
+
+        res.json(response);
+    });
+});
 
 /**
  * Server Listen
