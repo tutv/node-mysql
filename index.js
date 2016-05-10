@@ -274,7 +274,7 @@ app.get('/api/4', function (req, res) {
     var id = 2356;
     var startTime = datek.getNowTimestamp();
 
-    knex.select('posts.*', 'authors.name', 'authors.username').from('posts').where('posts.id', id).innerJoin('authors', 'posts.author_id', '=', 'authors.id').limit(1).first().then(function (post) {
+    knex.select('posts.*', 'authors.name', 'authors.username').from('posts').innerJoin('authors', 'posts.author_id', '=', 'authors.id').where('posts.id', id).limit(1).first().then(function (post) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
