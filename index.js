@@ -227,6 +227,9 @@ app.get('/api/1', function (req, res) {
         response.time = sumTime;
         response.result = number;
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
@@ -242,6 +245,9 @@ app.get('/api/2', function (req, res) {
         response.time = sumTime;
         response.result = posts;
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
@@ -265,6 +271,9 @@ app.get('/api/3', function (req, res) {
             response.result = posts;
         }
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
@@ -288,6 +297,9 @@ app.get('/api/4', function (req, res) {
             response.result = post;
         }
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
@@ -303,6 +315,9 @@ app.get('/api/5', function (req, res) {
         response.time = sumTime;
         response.result = number;
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
@@ -318,6 +333,9 @@ app.get('/api/6', function (req, res) {
         response.time = sumTime;
         response.result = number;
 
+        res.set({
+            'Access-Control-Allow-Origin': '*'
+        });
         res.json(response);
     });
 });
