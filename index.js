@@ -311,7 +311,7 @@ app.get('/api/6', function (req, res) {
     var title = 'Et commodo sint amet aliquip eiusmod aliquip deserunt anim magna.';
 
     var startTime = datek.getNowTimestamp();
-    knex.posts.where('title', title).del().then(function (number) {
+    db.posts.where('title', title).del().then(function (number) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
