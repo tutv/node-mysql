@@ -226,6 +226,7 @@ app.get('/api/1', function (req, res) {
         sumTime = doneTime - startTime;
         response.time = sumTime;
         response.result = number;
+        response.number = 1;
 
         res.set({
             'Access-Control-Allow-Origin': '*'
@@ -244,6 +245,7 @@ app.get('/api/2', function (req, res) {
 
         response.time = sumTime;
         response.result = posts;
+        response.number = 2;
 
         res.set({
             'Access-Control-Allow-Origin': '*'
@@ -271,6 +273,7 @@ app.get('/api/3', function (req, res) {
             response.result = posts;
         }
 
+        response.number = 3;
         res.set({
             'Access-Control-Allow-Origin': '*'
         });
@@ -297,6 +300,7 @@ app.get('/api/4', function (req, res) {
             response.result = post;
         }
 
+        response.number = 4;
         res.set({
             'Access-Control-Allow-Origin': '*'
         });
@@ -315,6 +319,7 @@ app.get('/api/5', function (req, res) {
         response.time = sumTime;
         response.result = number;
 
+        response.number = 5;
         res.set({
             'Access-Control-Allow-Origin': '*'
         });
@@ -333,6 +338,7 @@ app.get('/api/6', function (req, res) {
         response.time = sumTime;
         response.result = number;
 
+        response.number = 6;
         res.set({
             'Access-Control-Allow-Origin': '*'
         });
