@@ -270,7 +270,6 @@ app.get('/api/3', function (req, res) {
 });
 
 app.get('/api/4', function (req, res) {
-
     var id = 2356;
     var startTime = datek.getNowTimestamp();
 
@@ -294,16 +293,24 @@ app.get('/api/4', function (req, res) {
 });
 
 app.get('/api/5', function (req, res) {
+    var id = 1234;
+    var startTime = datek.getNowTimestamp();
 
+    db.posts.where('id', '=', id).del().then(function (number) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+        response.result = number;
+
+        res.json(response);
+    });
 });
 
 app.get('/api/6', function (req, res) {
 
 });
 
-app.get('/api/7', function (req, res) {
-
-});
 
 /**
  * Server Listen
