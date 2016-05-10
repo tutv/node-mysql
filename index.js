@@ -308,7 +308,18 @@ app.get('/api/5', function (req, res) {
 });
 
 app.get('/api/6', function (req, res) {
+    var username = 'min';
 
+    var startTime = datek.getNowTimestamp();
+    knex.select('posts.*', 'authors.name', 'authors.username').from('posts').innerJoin('authors', 'posts.author_id', '=', 'authors.id').where('authors.username', username).del().then(function (number) {
+        var doneTime = datek.getNowTimestamp();
+        var sumTime;
+        sumTime = doneTime - startTime;
+        response.time = sumTime;
+        response.result = number;
+
+        res.json(response);
+    });
 });
 
 
