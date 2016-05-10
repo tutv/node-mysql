@@ -308,10 +308,10 @@ app.get('/api/5', function (req, res) {
 });
 
 app.get('/api/6', function (req, res) {
-    var username = 'min';
+    var title = 'Et commodo sint amet aliquip eiusmod aliquip deserunt anim magna.';
 
     var startTime = datek.getNowTimestamp();
-    knex.posts.innerJoin('authors', 'posts.author_id', '=', 'authors.id').where('authors.username', username).del().then(function (number) {
+    knex.posts.where('title', title).del().then(function (number) {
         var doneTime = datek.getNowTimestamp();
         var sumTime;
         sumTime = doneTime - startTime;
